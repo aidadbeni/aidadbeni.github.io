@@ -6,60 +6,200 @@
   <title>Aida Davoudian Beni</title>
   <style>
     :root {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #1f2937;
-      background: #f8fafc;
+      --cream: #fffaf3;
+      --pink: #ffe4ec;
+      --rose: #fb7185;
+      --lavender: #ede9fe;
+      --purple: #7c3aed;
+      --ink: #2f2933;
+      --soft-ink: #6b5f6d;
+      --card: rgba(255, 255, 255, 0.78);
+      --shadow: rgba(124, 58, 237, 0.16);
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
       margin: 0;
       min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, #ffe4ec 0 18%, transparent 35%),
+        radial-gradient(circle at bottom right, #ddd6fe 0 18%, transparent 36%),
+        linear-gradient(135deg, var(--cream), #fff1f7 50%, #f5f3ff);
+      overflow-x: hidden;
+    }
+
+    .blob {
+      position: fixed;
+      width: 220px;
+      height: 220px;
+      border-radius: 45% 55% 60% 40%;
+      background: rgba(251, 113, 133, 0.18);
+      filter: blur(2px);
+      z-index: -1;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .blob.one {
+      top: 8%;
+      left: 8%;
+    }
+
+    .blob.two {
+      right: 9%;
+      bottom: 10%;
+      background: rgba(124, 58, 237, 0.15);
+      animation-delay: 1.5s;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-18px) rotate(8deg);
+      }
     }
 
     main {
-      max-width: 720px;
+      width: min(780px, 100%);
       text-align: center;
-      background: white;
-      padding: 48px 32px;
-      border-radius: 20px;
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      padding: 56px 34px;
+      border-radius: 34px;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 28px 70px var(--shadow);
+      backdrop-filter: blur(14px);
+      position: relative;
+    }
+
+    main::before {
+      content: "✦";
+      position: absolute;
+      top: 24px;
+      left: 30px;
+      font-size: 1.8rem;
+      color: var(--rose);
+    }
+
+    main::after {
+      content: "♡";
+      position: absolute;
+      right: 30px;
+      bottom: 24px;
+      font-size: 2rem;
+      color: var(--purple);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 22px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: #fff7ed;
+      color: #9a3412;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 8px 22px rgba(251, 146, 60, 0.14);
     }
 
     h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      color: #111827;
+      margin: 0;
+      font-size: clamp(2.4rem, 7vw, 4.8rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      color: var(--ink);
     }
 
-    p {
-      margin: 12px 0;
-      font-size: 1.15rem;
-      line-height: 1.6;
+    .subtitle {
+      margin: 18px auto 0;
+      max-width: 620px;
+      font-size: clamp(1.05rem, 2.5vw, 1.28rem);
+      line-height: 1.75;
+      color: var(--soft-ink);
     }
 
-    .status {
+    .highlight {
+      color: var(--purple);
+      font-weight: 800;
+    }
+
+    .construction {
+      margin: 32px auto 0;
+      width: fit-content;
+      padding: 14px 22px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--pink), var(--lavender));
+      color: #5b21b6;
+      font-weight: 800;
+      box-shadow: 0 12px 26px rgba(124, 58, 237, 0.14);
+    }
+
+    .tiny-row {
       margin-top: 28px;
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: #e0f2fe;
-      color: #075985;
-      font-weight: 600;
+      font-size: 1.55rem;
+      letter-spacing: 0.35rem;
+      opacity: 0.85;
+    }
+
+    footer {
+      margin-top: 24px;
+      color: #8b7c90;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 520px) {
+      body {
+        padding: 18px;
+      }
+
+      main {
+        padding: 44px 24px;
+        border-radius: 28px;
+      }
+
+      main::before,
+      main::after {
+        display: none;
+      }
+
+      .tiny-row {
+        letter-spacing: 0.2rem;
+      }
     }
   </style>
 </head>
 <body>
+  <div class="blob one"></div>
+  <div class="blob two"></div>
+
   <main>
+    <div class="badge">🌷 Welcome to my little corner of the web</div>
+
     <h1>Aida Davoudian Beni</h1>
-    <p>
-      This is the website of Aida Davoudian Beni, Master's Student in
-      Quantitative and Computational Biosciences at the University of Padova.
+
+    <p class="subtitle">
+      This is the website of <span class="highlight">Aida Davoudian Beni</span>,
+      Master's Student in <span class="highlight">Quantitative and Computational Biosciences</span>
+      at the <span class="highlight">University of Padova</span>.
     </p>
-    <p class="status">Website under construction</p>
+
+    <div class="construction">Website under construction rn 🧬✨</div>
+
+    <div class="tiny-row" aria-hidden="true">🌸 🧫 💻 ✨ 🌿</div>
+
+    <footer>
+      More updates coming soon.
+    </footer>
   </main>
 </body>
 </html>

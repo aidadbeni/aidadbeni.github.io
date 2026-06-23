@@ -1,6 +1,10 @@
 # Aida Davoudian Beni Website
 
-A simple GitHub Pages landing page.
+A cute, simple GitHub Pages landing page.
+
+## Files
+
+- `index.html` — the landing page
 
 ## How to publish on GitHub Pages
 
