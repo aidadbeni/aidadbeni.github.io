@@ -1,10 +1,13 @@
 # Aida Davoudian Beni Website
 
-A cute, simple GitHub Pages landing page.
+A cute animated GitHub Pages landing page with:
+- a soft moving node-and-edge background
+- pastel DNA-style double helixes gently forming and rotating
+- no external libraries required
 
 ## Files
 
-- `index.html` — the landing page
+- `index.html` — the complete landing page
 
 ## How to publish on GitHub Pages
 
